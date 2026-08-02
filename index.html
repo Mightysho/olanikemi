@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<!-- All right reserved by Mightysho. Copyright 2026. Do not copy, steal, or use this code without permission.  -->
+<!-- This is a personal gift for Olanikemi Oluwanifemi. Thank you for respecting the effort and love that went into creating it. -->
 <html lang="en">
 <head>
 
@@ -938,10 +940,238 @@ height:260px;
 
 }
 
+/* ===Extra Pic & Beach Memory Section === */
+.special-memory{
+
+padding:100px 20px;
+
+background:linear-gradient(180deg,#fff8fb,#ffffff);
+
+}
+
+.memory-intro{
+
+max-width:800px;
+
+margin:25px auto 70px;
+
+text-align:center;
+
+font-size:1.1rem;
+
+line-height:1.9;
+
+color:#666;
+
+}
+
+.memory-grid{
+
+max-width:1100px;
+
+margin:auto;
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:60px;
+
+align-items:center;
+
+}
+
+/* PHOTO */
+
+.memory-photo{
+
+display:flex;
+
+justify-content:center;
+
+}
+
+.memory-photo img{
+
+width:320px;
+
+aspect-ratio:3/4;
+
+object-fit:cover;
+
+border-radius:28px;
+
+box-shadow:0 20px 45px rgba(0,0,0,.18);
+
+transition:.4s;
+
+}
+
+.memory-photo img:hover{
+
+transform:scale(1.03);
+
+}
+
+/* TEXT */
+
+.memory-text h3,
+.video-text h3{
+
+color:#ff4f9a;
+
+font-size:2rem;
+
+margin-bottom:20px;
+
+}
+
+.memory-text p,
+.video-text p{
+
+font-size:1.08rem;
+
+line-height:2;
+
+color:#555;
+
+text-align:justify;
+
+text-justify:inter-word;
+
+}
+
+/* VIDEO */
+
+.memory-video{
+
+display:flex;
+
+justify-content:center;
+
+}
+
+.memory-video video{
+
+width:320px;
+
+aspect-ratio:3/4;
+
+object-fit:cover;
+
+border-radius:28px;
+
+box-shadow:0 20px 45px rgba(0,0,0,.18);
+
+display:block;
+
+background:#000;
+
+transition:.4s;
+
+}
+
+.memory-video video:hover{
+
+transform:scale(1.03);
+
+}
+
+.memory-photo img,
+.memory-video video{
+
+border:4px solid rgba(255,255,255,.85);
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.special-memory{
+
+padding:80px 20px;
+
+}
+
+.memory-grid{
+
+grid-template-columns:1fr;
+
+gap:35px;
+
+text-align:center;
+
+}
+
+.memory-photo{
+
+order:1;
+
+}
+
+.memory-text{
+
+order:2;
+
+}
+
+.video-text{
+
+order:3;
+
+}
+
+.memory-video{
+
+order:4;
+
+}
+
+.memory-photo img,
+.memory-video video{
+
+width:280px;
+
+}
+
+.memory-photo img,
+.memory-video video{
+
+background:#fff;
+
+padding:8px;
+
+border-radius:24px;
+
+box-shadow:0 20px 45px rgba(0,0,0,.18);
+
+}
+
+.memory-text h3,
+.video-text h3{
+
+font-size:1.7rem;
+
+}
+
+.memory-text p,
+.video-text p{
+
+font-size:1rem;
+
+line-height:1.8;
+
+text-align:justify;
+
+}
+
+}
+
 </style>
 
 
-<div class="container">
+<div class="container"> 
 
 <div class="gallery-title">
 
@@ -1069,6 +1299,76 @@ You carry all of them effortlessly.
 
 </div>
 
+<!-- ========================================== -->
+<!-- Extra Memory -->
+<!-- ========================================== -->
+<section class="special-memory">
+
+    <div class="container">
+
+        <h2 class="letter-title">
+            A Memory I'll Always Treasure ❤️
+        </h2>
+
+        <p class="memory-intro">
+            Some memories are too precious to stay hidden among the rest. Our day at Elegushi Beach wasn't just another outing... it became one of my favourite chapters in our story.
+        </p>
+
+        <div class="memory-grid">
+
+            <!-- ================= PHOTO ================= -->
+
+            <div class="memory-photo">
+
+                <img src="images/our-photo-3.jpg"
+                     alt="Elegushi Beach Memory">
+
+            </div>
+
+            <div class="memory-text">
+
+                <h3>A Day I'll Never Forget 🌊</h3>
+
+                <p>
+                    Among all the beautiful memories we've created together, this day at Elegushi Beach will always have a special place in my heart. Watching the waves, sharing laughter, taking pictures, and simply enjoying your company reminded me that true happiness isn't about where we are... it's about who we're with. Thank you for making ordinary moments feel extraordinary.
+                </p>
+
+            </div>
+
+            <!-- ================= VIDEO ================= -->
+
+            <div class="video-text">
+
+                <h3>Reliving The Moment 🎥</h3>
+
+                <p>
+                    Every time I watch this video, I'm taken back to that beautiful day. The sound of the waves, the joy on our faces, and every little moment reminds me how blessed I am to have someone as amazing as you in my life. Memories like these are priceless, and I look forward to creating countless more with you.
+                </p>
+
+            </div>
+
+            <div class="memory-video">
+                <video
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                    disablepictureinpicture
+                    controlslist="nodownload noplaybackrate noremoteplayback nofullscreen"
+                >
+                    <source src="video/our-video.mp4" type="video/mp4">
+                </video>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==================================== -->
 
 
 <div class="quote-box">
