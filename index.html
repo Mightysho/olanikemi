@@ -2206,6 +2206,11 @@ line-height:2;
 
 }
 
+#typedLetter {
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
 </style>
 
 
@@ -2229,53 +2234,67 @@ window.addEventListener("load", () => {
 });
 
 // Type Writer Loader code goes here
-            // window.addEventListener("load", () => {
-            //     const typedLetter = document.getElementById("typedLetter");
 
-            //     if (!typedLetter) return;
+const letterSection = document.getElementById("typedLetter");
 
-            //     setTimeout(() => {
-            //         typeWriter();
-            //     }, 3500); // Start typing after loader disappears
-            // });
-                        // const typedLetter = document.getElementById("typedLetter");
+let hasTyped = false;
 
-                        // let i = 0;
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting && !hasTyped) {
+            hasTyped = true;
 
-                        // function typeWriter() {
+            letterSection.style.opacity = "1";
 
-                        //     if (i < letter.length) {
+            setTimeout(() => {
+                typeWriter();
+            }, 300);
 
-                        //         if (letter.charAt(i) === "\n") {
-                        //             typedLetter.innerHTML += "<br>";
-                        //         } else {
-                        //             typedLetter.innerHTML += letter.charAt(i);
-                        //         }
-
-                        //         i++;
-
-                        //         setTimeout(typeWriter, 28);
-
-                        //     }
-                        // }
-window.addEventListener("load", () => {
-    const loader = document.getElementById("loader");
-
-    if (!loader) return;
-
-    setTimeout(() => {
-        loader.style.opacity = "0";
-
-        setTimeout(() => {
-            loader.style.display = "none";
-
-            // Start typing after loader disappears
-            typeWriter();
-
-        }, 1000);
-
-    }, 2500);
+            observer.unobserve(letterSection);
+        }
+    });
+}, {
+    threshold: 0.4
 });
+
+observer.observe(letterSection);
+
+                    // const letterSection = document.getElementById("typedLetter");
+
+                    // let hasTyped = false;
+
+                    // const observer = new IntersectionObserver((entries) => {
+                    //     entries.forEach(entry => {
+                    //         if (entry.isIntersecting && !hasTyped) {
+                    //             hasTyped = true;
+                    //             typeWriter();
+                    //             observer.unobserve(letterSection);
+                    //         }
+                    //     });
+                    // }, {
+                    //     threshold: 0.4
+                    // });
+
+                    // observer.observe(letterSection);
+
+        // window.addEventListener("load", () => {
+        //     const loader = document.getElementById("loader");
+
+        //     if (!loader) return;
+
+        //     setTimeout(() => {
+        //         loader.style.opacity = "0";
+
+        //         setTimeout(() => {
+        //             loader.style.display = "none";
+
+        //             // Start typing after loader disappears
+        //             typeWriter();
+
+        //         }, 1000);
+
+        //     }, 2500);
+        // });
 
 // Letter text
 const letter = `
@@ -2345,21 +2364,41 @@ Happy Girlfriend's Day, Olanikemi.
 
 // Typewriter animation code will go here
 
-const typedLetter = document.getElementById("typedLetter");
+            const typedLetter = document.getElementById("typedLetter");
 
-let index = 0;
+            let i = 0;
 
-function typeWriter() {
-    if (index < letter.length) {
+            function typeWriter() {
 
-        typedLetter.innerHTML += letter.charAt(index)
-            .replace(/\n/g, "<br>");
+                if (i < letter.length) {
 
-        index++;
+                    if (letter.charAt(i) === "\n") {
+                        typedLetter.innerHTML += "<br>";
+                       } else {
+                        typedLetter.innerHTML += letter.charAt(i);
+                    }
 
-        setTimeout(typeWriter, 35);
-    }
-}
+                       i++;
+
+                      setTimeout(typeWriter, 28);
+
+                }
+               }
+// const typedLetter = document.getElementById("typedLetter");
+
+// let index = 0;
+
+// function typeWriter() {
+//     if (index < letter.length) {
+
+//         typedLetter.innerHTML += letter.charAt(index)
+//             .replace(/\n/g, "<br>");
+
+//         index++;
+
+//         setTimeout(typeWriter, 35);
+//     }
+// }
 
 // Music play botton control
 const music = document.getElementById("bgMusic");
