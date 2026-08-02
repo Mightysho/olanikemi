@@ -2237,23 +2237,55 @@ line-height:2;
 <script>
 // Put the loader code HERE
 
+// Always start from the top after refresh
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+
 window.addEventListener("load", () => {
 
+    // Force page to the top immediately
     window.scrollTo(0, 0);
 
     const loader = document.getElementById("loader");
 
     if (!loader) return;
 
+    // Show loader for 2.5 seconds
     setTimeout(() => {
+
         loader.style.opacity = "0";
 
         setTimeout(() => {
+
             loader.style.display = "none";
+
+            // Make sure we're still at the top
+            window.scrollTo(0, 0);
+
         }, 1000);
 
     }, 2500);
+
 });
+
+        // window.addEventListener("load", () => {
+
+        //     window.scrollTo(0, 0);
+
+        //     const loader = document.getElementById("loader");
+
+        //     if (!loader) return;
+
+        //     setTimeout(() => {
+        //         loader.style.opacity = "0";
+
+        //         setTimeout(() => {
+        //             loader.style.display = "none";
+        //         }, 1000);
+
+        //     }, 2500);
+        // });
 
 // Type Writer Loader code goes here
 
